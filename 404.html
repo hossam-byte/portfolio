@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Route Not Found | Hossam Hassan</title>
+  <link rel="icon" type="image/png" href="assets/images/mascot-thumbsup.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/Logo-avatar.png" alt="Hossam Hassan" class="brand-mascot-avatar" width="42" height="42">
+        <div class="brand-text">
+          <span class="brand-name">Hossam Hassan</span>
+          <span class="brand-title">PHP Backend Developer</span>
+        </div>
+      </a>
+      <div class="navbar-actions">
+        <a href="https://wa.me/201109163202?text=Hello%20Hossam," target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+        <a href="index.html" class="btn btn-primary btn-sm">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="error-404-container">
+    <div class="container">
+      <div class="error-404-card" style="margin: 0 auto;">
+        <!-- Inspecting Mascot -->
+        <img src="assets/images/Logo.png" alt="Hossam Mascot" class="error-mascot-img" width="220" height="220">
+        
+        <div class="error-code">404</div>
+        <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 12px;">Route Not Found</h1>
+        
+        <!-- Terminal Style Error Callout -->
+        <div style="background: var(--code-bg); border-radius: var(--radius-md); padding: 18px; text-align: left; margin: 24px 0; border: 1px solid rgba(239,68,68,0.3); font-family: var(--font-mono); font-size: 0.8125rem; color: #FCA5A5; line-height: 1.6;">
+          <div style="color: #EF4444; font-weight: 700; margin-bottom: 4px;">NotFoundHttpException</div>
+          <div>The requested URL does not match any registered routes in <code>routes/web.php</code> or <code>routes/api.php</code>.</div>
+        </div>
+
+        <p style="color: var(--text-muted); margin-bottom: 28px;">
+          Looks like the controller couldn't resolve this endpoint. Let's redirect you back to a safe route!
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 14px;">
+          <a href="index.html" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Return to Homepage
+          </a>
+          <a href="index.html#projects" class="btn btn-secondary">
+            View Backend Projects <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="padding: 24px 0;">
+    <div class="container" style="text-align: center; font-size: 0.85rem; color: #64748B;">
+      © Hossam Hassan • PHP Backend Developer
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
