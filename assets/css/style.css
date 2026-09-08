@@ -102,6 +102,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -110,6 +112,7 @@ body {
   color: var(--text-main);
   line-height: 1.65;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
 }
@@ -119,8 +122,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
   opacity: 0.45;
@@ -429,11 +432,12 @@ code, pre, .font-mono {
   transform: translateY(-2px);
 }
 
-/* Floating Circular WhatsApp Button (No text, pure round on right) */
+/* Floating Circular WhatsApp Button (No text, pure round on LEFT) */
 .floating-whatsapp {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
+  right: auto;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -2509,24 +2513,26 @@ code, pre, .font-mono {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: var(--modal-overlay);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: all var(--transition-normal);
 }
 
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal-content-card {
@@ -2611,21 +2617,26 @@ code, pre, .font-mono {
   position: fixed;
   top: var(--header-height);
   left: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: calc(100vh - var(--header-height));
   background: var(--bg-surface-elevated);
-  z-index: 99;
+  z-index: 999;
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   transform: translateX(-100%);
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), visibility var(--transition-normal);
   overflow-y: auto;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-link {
@@ -2832,25 +2843,36 @@ code, pre, .font-mono {
   }
 
   /* WordPress Slider Cards */
+  .wp-slider-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .wp-slider-track {
+    max-width: 100%;
+  }
   .wp-project-card {
     padding: 22px 18px;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
   .wp-card-action .company-link {
     width: 100%;
     justify-content: space-between;
   }
 
-  /* Floating WhatsApp Button on Mobile */
+  /* Floating WhatsApp Button on Mobile (Placed on the LEFT) */
   .floating-whatsapp {
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    width: 52px;
+    height: 52px;
+    bottom: 22px;
+    left: 20px;
+    right: auto;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
   }
   .floating-whatsapp svg {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 
   /* Contact Form Inputs: 16px font prevents iOS auto-zoom */
